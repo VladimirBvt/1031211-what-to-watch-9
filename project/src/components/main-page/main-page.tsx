@@ -44,7 +44,6 @@ function MainPage(): JSX.Element {
         </div>
 
         <h1 className='visually-hidden'>WTW</h1>
-
         <header className='page-header film-card__head'>
           <div className='logo'>
             <a className='logo__link' href='#'>
@@ -53,7 +52,6 @@ function MainPage(): JSX.Element {
               <span className='logo__letter logo__letter--3'>W</span>
             </a>
           </div>
-
           <ul className='user-block'>
             <li className='user-block__item'>
               <div className='user-block__avatar'>
@@ -104,7 +102,7 @@ function MainPage(): JSX.Element {
 
           <ul className='catalog__genres-list'>
             <li className='catalog__genres-item catalog__genres-item--active'>
-              <a href="#" className='catalog__genres-link'>All genres</a>
+              <a href='#' className='catalog__genres-link'>All genres</a>
             </li>
             <li className='catalog__genres-item'>
               <a href='#' className='catalog__genres-link'>Comedies</a>
