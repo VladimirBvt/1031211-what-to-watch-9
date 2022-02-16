@@ -1,6 +1,14 @@
 import FilmCard from '../film-card/film-card';
 
-function App(): JSX.Element {
+type PromoFilmProp = {
+  promoFilmsData: {
+    title: string;
+    genre: string;
+    dateRelease: number
+  }
+}
+
+function App(props:PromoFilmProp): JSX.Element {
   return (
     <>
       <div className='visually-hidden'>
@@ -72,10 +80,10 @@ function App(): JSX.Element {
             </div>
 
             <div className='film-card__desc'>
-              <h2 className='film-card__title'>The Grand Budapest Hotel</h2>
+              <h2 className='film-card__title'>{props.promoFilmsData.title}</h2>
               <p className='film-card__meta'>
-                <span className='film-card__genre'>Drama</span>
-                <span className='film-card__year'>2014</span>
+                <span className='film-card__genre'>{props.promoFilmsData.genre}</span>
+                <span className='film-card__year'>{props.promoFilmsData.dateRelease}</span>
               </p>
 
               <div className='film-card__buttons'>
