@@ -26,6 +26,6 @@ ReactDOM.render(
     <App promoFilmsData={promoFilm}/>
     {/*<MyList />*/}
     {/*<MainPage />*/}
-    {/*<Header set='forMyList'/>*/}
+    {/*<Header set='forMainPage'/>*/}
   </React.StrictMode>,
   document.getElementById('root'));
