@@ -15,7 +15,7 @@ import Header from '../header/header';
 }*/
 
 
-function MyList () {
+function MyList ():JSX.Element {
   //console.log(props.settingKey);
   return (
     <>
