@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MyList from './components/my-list/my-list';
-/*import MainPage from './components/main-page/main-page';*/
+//import MyList from './components/my-list/my-list';
+import MainPage from './components/main-page/main-page';
 //import Header from './components/header/header';
 //import MyList from './components/my-list/my-list';
 //import {settingsForHeaderMyList} from './components/my-list/my-list';
@@ -24,8 +24,8 @@ const promoFilm:PromoFilm = {
 ReactDOM.render(
   <React.StrictMode>
     {/*<App promoFilmsData={promoFilm}/>*/}
-    <MyList />
-    {/*<MyList settingKey='forMyList' />*/}
+    {/*<MyList />*/}
+    <MainPage />
     {/*<Header set='forMyList'/>*/}
   </React.StrictMode>,
   document.getElementById('root'));

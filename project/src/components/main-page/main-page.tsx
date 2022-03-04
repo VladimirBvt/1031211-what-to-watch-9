@@ -6,6 +6,8 @@
   },
 };*/
 
+import Header from '../header/header';
+
 function MainPage(): JSX.Element {
   return (
     <>
@@ -51,7 +53,8 @@ function MainPage(): JSX.Element {
         </div>
 
         <h1 className='visually-hidden'>WTW</h1>
-        <header className='page-header film-card__head'>
+        <Header set='forMainPage'/>
+        {/*<header className='page-header film-card__head'>
           <div className='logo'>
             <a className='logo__link' href='#'>
               <span className='logo__letter logo__letter--1'>W</span>
@@ -69,7 +72,7 @@ function MainPage(): JSX.Element {
               <a className='user-block__link' href='#'>Sign out</a>
             </li>
           </ul>
-        </header>
+        </header>*/}
 
         <div className='film-card__wrap'>
           <div className='film-card__info'>
