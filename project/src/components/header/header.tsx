@@ -1,22 +1,10 @@
-/*import {inspect} from "util";*/
-/*import styles = module*/
-
-/*export type SettingsHeader = {
-  additionalClassHeader: string | undefined,
-  userBlockAvatarSize: {
-    width: string,
-    height: string
-  }
-}*/
-
 export type SetProps = {
   set: string
 }
 
 function Header (props: SetProps):JSX.Element {
-  //console.log(typeof props);
   return (
-    <header className={`page-header ${props.set === 'forMyList' ? 'film-card__head' : 'user-page__head'}`}>
+    <header className={`page-header ${props.set === 'forMainPage' ? 'film-card__head' : 'user-page__head'}`}>
       <div className='logo'>
         <a className='logo__link' href='#'>
           <span className='logo__letter logo__letter--1'>W</span>
@@ -27,7 +15,7 @@ function Header (props: SetProps):JSX.Element {
       <ul className='user-block'>
         <li className='user-block__item'>
           <div className='user-block__avatar'>
-            <img src='img/avatar.jpg' alt='User avatar' style={{width: props.set === 'forMyList' ? 280 : 63, height: props.set === 'forMyList' ? 175 : 63}} />
+            <img src='img/avatar.jpg' alt='User avatar' style={{width: 63, height: 63}} />
           </div>
         </li>
         <li className='user-block__item'>
