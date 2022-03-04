@@ -1,3 +1,11 @@
+/*const settingsForHeaderMainPage = {
+  additionalClassHeader: 'film-card__head',
+  userBlockAvatarSize: {
+    width: '63',
+    height: '63',
+  },
+};*/
+
 function MainPage(): JSX.Element {
   return (
     <>
@@ -23,7 +31,7 @@ function MainPage(): JSX.Element {
           </symbol>
           <symbol id='pause' viewBox='0 0 14 21'>
             <symbol id='play-s' viewBox='0 0 19 19'>
-              <path fillRule='evenodd' clipRule='evenodd' d='M0 0L19 9.5L0 19V0Z' fill='#EEE5B5' />
+              <path fillRule='evenodd' clipRule='evenodd' d='M0 0L19 9.5L0 19V0Z' fill='#EEE5B5'/>
             </symbol>
             {/* Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch */}
             <title>Artboard</title>

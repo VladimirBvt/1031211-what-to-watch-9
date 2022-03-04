@@ -1,4 +1,22 @@
+/*import {SettingsHeader} from '../header/header';
+
+export const settingsForHeaderMyList:SettingsHeader = {
+  additionalClassHeader: 'user-page__head',
+  userBlockAvatarSize: {
+    width: '280',
+    height: '175',
+  },
+};*/
+
+import Header from '../header/header';
+
+/*type PropsForMyListComponent = {
+  settingKey: string
+}*/
+
+
 function MyList () {
+  //console.log(props.settingKey);
   return (
     <>
       <div className='visually-hidden'>
@@ -35,7 +53,8 @@ function MyList () {
       </div>
 
       <div className='user-page'>
-        <header className='page-header user-page__head'>
+        <Header set='forMyList'/>
+        {/*<header className='page-header {props.settingKey === 'forMyList' ? 'user-page__head' : ''}'>
           <div className='logo'>
             <a href='#' className='logo__link'>
               <span className='logo__letter logo__letter--1'>W</span>
@@ -56,7 +75,7 @@ function MyList () {
               <a className='user-block__link'>Sign out</a>
             </li>
           </ul>
-        </header>
+        </header>*/}
 
         <section className='catalog'>
           <h2 className='catalog__title visually-hidden'>Catalog</h2>
