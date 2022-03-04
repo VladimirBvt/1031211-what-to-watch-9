@@ -1,3 +1,5 @@
+import UserBlock from '../user-block/user-block';
+
 export type SetProps = {
   set: string
 }
@@ -12,7 +14,10 @@ function Header (props: SetProps):JSX.Element {
           <span className='logo__letter logo__letter--3'>W</span>
         </a>
       </div>
-      <ul className='user-block'>
+
+      {props.set === 'forSignIn' ? '' : <UserBlock/>}
+
+      {/*<ul className='user-block'>
         <li className='user-block__item'>
           <div className='user-block__avatar'>
             <img src='img/avatar.jpg' alt='User avatar' style={{width: 63, height: 63}} />
@@ -21,7 +26,10 @@ function Header (props: SetProps):JSX.Element {
         <li className='user-block__item'>
           <a className='user-block__link' href='#'>Sign out</a>
         </li>
-      </ul>
+      </ul>*/}
+
+      {props.set === 'forSignIn' ? <h1 className="page-title user-page__title">Sign in</h1> : ''}
+
     </header>);
 }
 
