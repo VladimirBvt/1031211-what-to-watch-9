@@ -16,7 +16,7 @@ export type SetProps = {
 function Header (props: SetProps):JSX.Element {
   //console.log(typeof props);
   return (
-    <header className={`page-header ${props.set === 'forMyList' ? 'user-page__head' : ''}`}>
+    <header className={`page-header ${props.set === 'forMyList' ? 'film-card__head' : 'user-page__head'}`}>
       <div className='logo'>
         <a className='logo__link' href='#'>
           <span className='logo__letter logo__letter--1'>W</span>

@@ -1,4 +1,7 @@
-function SvgHidden ():JSX.Element {
+import AdditionalSymbolForSvgHidden from '../additional-symbol-for-svg-hidden/additional-symbol-for-svg-hidden';
+import {SetProps} from '../header/header';
+
+function SvgHidden (props:SetProps):JSX.Element {
   return (
     <div className='visually-hidden'>
       {/* inject:svg */}
@@ -21,9 +24,9 @@ function SvgHidden ():JSX.Element {
           <path fillRule='evenodd' clipRule='evenodd' d='M2.40513 5.35353L6.1818 8.90902L15.5807 0L18 2.80485L6.18935 14L0 8.17346L2.40513 5.35353Z' fill='#EEE5B5'/>
         </symbol>
         <symbol id='pause' viewBox='0 0 14 21'>
-          <symbol id='play-s' viewBox='0 0 19 19'>
-            <path fillRule='evenodd' clipRule='evenodd' d='M0 0L19 9.5L0 19V0Z' fill='#EEE5B5'/>
-          </symbol>
+
+          {props.set === 'forMainPage' ? <AdditionalSymbolForSvgHidden/> : ''}
+
           {/* Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch */}
           <title>Artboard</title>
           <desc>Created with Sketch.</desc>
