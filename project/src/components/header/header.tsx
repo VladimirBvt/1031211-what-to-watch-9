@@ -1,4 +1,6 @@
 import UserBlock from '../user-block/user-block';
+import {Link} from 'react-router-dom';
+import {AppRoute} from '../../const';
 
 export type SetProps = {
   set: string
@@ -8,11 +10,11 @@ function Header (props: SetProps):JSX.Element {
   return (
     <header className={`page-header ${props.set === 'forMainPage' ? 'film-card__head' : 'user-page__head'}`}>
       <div className='logo'>
-        <a className='logo__link' href='#'>
+        <Link className='logo__link' to={AppRoute.Main}>
           <span className='logo__letter logo__letter--1'>W</span>
           <span className='logo__letter logo__letter--2'>T</span>
           <span className='logo__letter logo__letter--3'>W</span>
-        </a>
+        </Link>
       </div>
 
       {props.set === 'forSignIn' ? '' : <UserBlock/>}

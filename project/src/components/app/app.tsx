@@ -1,9 +1,9 @@
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
-import FilmCard from '../film-card/film-card';
-import {PromoFilm} from '../../index';
-import SvgHidden from '../svg-hidden/svg-hidden';
-import Header from '../header/header';
-import Footer from '../footer/footer';
+//import FilmCard from '../film-card/film-card';
+//import {PromoFilm} from '../../index';
+//import SvgHidden from '../svg-hidden/svg-hidden';
+//import Header from '../header/header';
+//import Footer from '../footer/footer';
 import {AppRoute} from '../../const';
 import MainPage from '../main-page/main-page';
 import SignIn from '../sign-in/sign-in';
@@ -21,11 +21,11 @@ import NotFound from '../not-found/not-found';
   }
 }*/
 
-type PromoFilmProp = {
+/*type PromoFilmProp = {
   promoFilmsData: PromoFilm
-  }
+  }*/
 
-function App(props:PromoFilmProp): JSX.Element {
+function App(): JSX.Element {
   return (
     <>
       <BrowserRouter>
@@ -60,7 +60,8 @@ function App(props:PromoFilmProp): JSX.Element {
           />
         </Routes>
       </BrowserRouter>
-      <SvgHidden set='forMainPage' />
+
+      {/*<SvgHidden set='forMainPage' />
 
       <section className='film-card'>
         <div className='film-card__bg'>
@@ -142,7 +143,8 @@ function App(props:PromoFilmProp): JSX.Element {
 
           <div className='catalog__films-list'>
 
-             Контейнер для карточек фильмов
+              Контейнер для карточек фильмов
+
             <FilmCard/>
             <FilmCard/>
             <FilmCard/>
@@ -173,7 +175,7 @@ function App(props:PromoFilmProp): JSX.Element {
 
         <Footer/>
 
-      </div>
+      </div>*/}
     </>
   );
 }
