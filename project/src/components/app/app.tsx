@@ -1,13 +1,14 @@
-import {Route, BrowserRouter, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 //import FilmCard from '../film-card/film-card';
 //import {PromoFilm} from '../../index';
 //import SvgHidden from '../svg-hidden/svg-hidden';
 //import Header from '../header/header';
 //import Footer from '../footer/footer';
-import {AppRoute} from '../../const';
+import {AppRoute, AuthorizationStatus} from '../../const';
 import MainPage from '../main-page/main-page';
 import SignIn from '../sign-in/sign-in';
 import MyList from '../my-list/my-list';
+import PrivateRoute from '../private-route/private-route';
 import MoviePage from '../movie-page/movie-page';
 import AddReview from '../add-review/add-review';
 import Player from '../player/player';
@@ -40,7 +41,11 @@ function App(): JSX.Element {
           />
           <Route
             path={AppRoute.MyList}
-            element={<MyList/>}
+            element={
+              <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+                <MyList />
+              </PrivateRoute>
+            }
           />
           <Route
             path={AppRoute.Film}
