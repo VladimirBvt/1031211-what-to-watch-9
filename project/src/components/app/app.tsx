@@ -1,8 +1,17 @@
+import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import FilmCard from '../film-card/film-card';
 import {PromoFilm} from '../../index';
 import SvgHidden from '../svg-hidden/svg-hidden';
 import Header from '../header/header';
 import Footer from '../footer/footer';
+import {AppRoute} from '../../const';
+import MainPage from '../main-page/main-page';
+import SignIn from '../sign-in/sign-in';
+import MyList from '../my-list/my-list';
+import MoviePage from '../movie-page/movie-page';
+import AddReview from '../add-review/add-review';
+import Player from '../player/player';
+import NotFound from '../not-found/not-found';
 
 /*type PromoFilmProp = {
   promoFilmsData: {
@@ -19,6 +28,38 @@ type PromoFilmProp = {
 function App(props:PromoFilmProp): JSX.Element {
   return (
     <>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path={AppRoute.Main}
+            element={<MainPage/>}
+          />
+          <Route
+            path={AppRoute.SignIn}
+            element={<SignIn/>}
+          />
+          <Route
+            path={AppRoute.MyList}
+            element={<MyList/>}
+          />
+          <Route
+            path={AppRoute.Film}
+            element={<MoviePage/>}
+          />
+          <Route
+            path={AppRoute.AddReview}
+            element={<AddReview/>}
+          />
+          <Route
+            path={AppRoute.Player}
+            element={<Player/>}
+          />
+          <Route
+            path='*'
+            element={<NotFound/>}
+          />
+        </Routes>
+      </BrowserRouter>
       <SvgHidden set='forMainPage' />
 
       <section className='film-card'>
@@ -101,7 +142,7 @@ function App(props:PromoFilmProp): JSX.Element {
 
           <div className='catalog__films-list'>
 
-            {/* Контейнер для карточек фильмов */}
+             Контейнер для карточек фильмов
             <FilmCard/>
             <FilmCard/>
             <FilmCard/>
