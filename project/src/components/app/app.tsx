@@ -1,8 +1,18 @@
-import FilmCard from '../film-card/film-card';
-import {PromoFilm} from '../../index';
-import SvgHidden from '../svg-hidden/svg-hidden';
-import Header from '../header/header';
-import Footer from '../footer/footer';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+//import FilmCard from '../film-card/film-card';
+//import {PromoFilm} from '../../index';
+//import SvgHidden from '../svg-hidden/svg-hidden';
+//import Header from '../header/header';
+//import Footer from '../footer/footer';
+import {AppRoute, AuthorizationStatus} from '../../const';
+import MainPage from '../main-page/main-page';
+import SignIn from '../sign-in/sign-in';
+import MyList from '../my-list/my-list';
+import PrivateRoute from '../private-route/private-route';
+import MoviePage from '../movie-page/movie-page';
+import AddReview from '../add-review/add-review';
+import Player from '../player/player';
+import NotFound from '../not-found/not-found';
 
 /*type PromoFilmProp = {
   promoFilmsData: {
@@ -12,14 +22,51 @@ import Footer from '../footer/footer';
   }
 }*/
 
-type PromoFilmProp = {
+/*type PromoFilmProp = {
   promoFilmsData: PromoFilm
-  }
+  }*/
 
-function App(props:PromoFilmProp): JSX.Element {
+function App(): JSX.Element {
   return (
     <>
-      <SvgHidden set='forMainPage' />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path={AppRoute.Main}
+            element={<MainPage/>}
+          />
+          <Route
+            path={AppRoute.SignIn}
+            element={<SignIn/>}
+          />
+          <Route
+            path={AppRoute.MyList}
+            element={
+              <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+                <MyList />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path={AppRoute.Film}
+            element={<MoviePage/>}
+          />
+          <Route
+            path={AppRoute.AddReview}
+            element={<AddReview/>}
+          />
+          <Route
+            path={AppRoute.Player}
+            element={<Player/>}
+          />
+          <Route
+            path='*'
+            element={<NotFound/>}
+          />
+        </Routes>
+      </BrowserRouter>
+
+      {/*<SvgHidden set='forMainPage' />
 
       <section className='film-card'>
         <div className='film-card__bg'>
@@ -101,7 +148,8 @@ function App(props:PromoFilmProp): JSX.Element {
 
           <div className='catalog__films-list'>
 
-            {/* Контейнер для карточек фильмов */}
+              Контейнер для карточек фильмов
+
             <FilmCard/>
             <FilmCard/>
             <FilmCard/>
@@ -132,7 +180,7 @@ function App(props:PromoFilmProp): JSX.Element {
 
         <Footer/>
 
-      </div>
+      </div>*/}
     </>
   );
 }
