@@ -13,6 +13,7 @@ import MoviePage from '../movie-page/movie-page';
 import AddReview from '../add-review/add-review';
 import Player from '../player/player';
 import NotFound from '../not-found/not-found';
+import {Films} from '../../mocks/films';
 
 /*type PromoFilmProp = {
   promoFilmsData: {
@@ -26,7 +27,11 @@ import NotFound from '../not-found/not-found';
   promoFilmsData: PromoFilm
   }*/
 
-function App(): JSX.Element {
+type AppProps = {
+  filmsData:Films
+};
+
+function App(props:AppProps): JSX.Element {
   return (
     <>
       <BrowserRouter>
@@ -49,7 +54,7 @@ function App(): JSX.Element {
           />
           <Route
             path={AppRoute.Film}
-            element={<MoviePage/>}
+            element={<MoviePage filmsData={props.filmsData}/>}
           />
           <Route
             path={AppRoute.AddReview}

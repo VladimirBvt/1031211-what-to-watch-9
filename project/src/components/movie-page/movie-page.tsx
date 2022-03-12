@@ -1,4 +1,10 @@
-function MoviePage () {
+import {Films} from '../../mocks/films';
+
+type PropsMoviePages = {
+  filmsData:Films
+};
+
+function MoviePage (props:PropsMoviePages) {
   return (
     <>
       <div className='visually-hidden'>
@@ -146,7 +152,7 @@ function MoviePage () {
                 <img src='img/fantastic-beasts-the-crimes-of-grindelwald.jpg' alt='Fantastic Beasts: The Crimes of Grindelwald' style={{width:'280', height:'175'}} />
               </div>
               <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Fantastic Beasts: The Crimes of Grindelwald</a>
+                <a className='small-film-card__link' href='#'>{props.filmsData[0].title}{/*Fantastic Beasts: The Crimes of Grindelwald*/}</a>
               </h3>
             </article>
 

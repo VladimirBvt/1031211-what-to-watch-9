@@ -1,4 +1,4 @@
-type Films = {
+export type Films = {
   id: number,
   title: string,
   genre: string,

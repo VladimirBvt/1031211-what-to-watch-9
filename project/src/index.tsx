@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 import App from './components/app/app';
 /*import Index from './components/index';*/
 /*import MainPage from './components/main-page/main-page';*/
+import {films} from './mocks/films';
 
 /*export type PromoFilm = {
   title: string;
@@ -21,9 +22,13 @@ const promoFilm:PromoFilm = {
   dateRelease: 2014,
 };*/
 
+/*type AppProps = {
+  films:Films
+};*/
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App filmsData={films}/>
     {/*<App promoFilmsData={promoFilm}/>*/}
     {/*<MyList />*/}
     {/*<MainPage />*/}
