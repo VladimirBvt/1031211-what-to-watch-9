@@ -1,4 +1,8 @@
 import {Films} from '../../mocks/films';
+import SvgHidden from '../svg-hidden/svg-hidden';
+import FilmCardList from '../filmCardList/filmCardList';
+import Footer from '../footer/footer';
+import UserBlock from '../user-block/user-block';
 
 type PropsMoviePages = {
   filmsData:Films
@@ -7,11 +11,13 @@ type PropsMoviePages = {
 function MoviePage (props:PropsMoviePages) {
   return (
     <>
-      <div className='visually-hidden'>
-        {/* inject:svg */}
+      <SvgHidden set='forMainPage' />
+
+      {/*<div className='visually-hidden'>
+         inject:svg
         <svg xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'>
           <symbol id='add' viewBox='0 0 19 20'>
-            {/* Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch */}
+             Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch
             <title>+</title>
             <desc>Created with Sketch.</desc>
             <g id='Page-1' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
@@ -31,7 +37,7 @@ function MoviePage (props:PropsMoviePages) {
             <symbol id='play-s' viewBox='0 0 19 19'>
               <path fillRule='evenodd' clipRule='evenodd' d='M0 0L19 9.5L0 19V0Z' fill='#EEE5B5'/>
             </symbol>
-            {/* Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch */}
+             Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch
             <title>Artboard</title>
             <desc>Created with Sketch.</desc>
             <g id='Artboard' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
@@ -40,8 +46,8 @@ function MoviePage (props:PropsMoviePages) {
             </g>
           </symbol>
         </svg>
-        {/* endinject */}
-      </div>
+         endinject
+      </div>*/}
 
       <section className='film-card film-card--full'>
         <div className='film-card__hero'>
@@ -60,7 +66,9 @@ function MoviePage (props:PropsMoviePages) {
               </a>
             </div>
 
-            <ul className='user-block'>
+            <UserBlock />
+
+            {/*<ul className='user-block'>
               <li className='user-block__item'>
                 <div className='user-block__avatar'>
                   <img src='img/avatar.jpg' alt='User avatar' style={{width:'63', height:'63'}}/>
@@ -69,7 +77,7 @@ function MoviePage (props:PropsMoviePages) {
               <li className='user-block__item'>
                 <a className='user-block__link'>Sign out</a>
               </li>
-            </ul>
+            </ul>*/}
           </header>
 
           <div className='film-card__wrap'>
@@ -147,12 +155,15 @@ function MoviePage (props:PropsMoviePages) {
           <h2 className='catalog__title'>More like this</h2>
 
           <div className='catalog__films-list'>
-            <article className='small-film-card catalog__films-card'>
+
+            <FilmCardList filmsData={props.filmsData}/>
+
+            {/*<article className='small-film-card catalog__films-card'>
               <div className='small-film-card__image'>
                 <img src='img/fantastic-beasts-the-crimes-of-grindelwald.jpg' alt='Fantastic Beasts: The Crimes of Grindelwald' style={{width:'280', height:'175'}} />
               </div>
               <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>{props.filmsData[0].title}{/*Fantastic Beasts: The Crimes of Grindelwald*/}</a>
+                <a className='small-film-card__link' href='#'>{props.filmsData[0].title}Fantastic Beasts: The Crimes of Grindelwald</a>
               </h3>
             </article>
 
@@ -181,11 +192,13 @@ function MoviePage (props:PropsMoviePages) {
               <h3 className='small-film-card__title'>
                 <a className='small-film-card__link' href='#'>Aviator</a>
               </h3>
-            </article>
+            </article>*/}
           </div>
         </section>
 
-        <footer className='page-footer'>
+        <Footer />
+
+        {/*<footer className='page-footer'>
           <div className='logo'>
             <a href='#' className='logo__link logo__link--light'>
               <span className='logo__letter logo__letter--1'>W</span>
@@ -197,7 +210,7 @@ function MoviePage (props:PropsMoviePages) {
           <div className='copyright'>
             <p>© 2019 What to watch Ltd.</p>
           </div>
-        </footer>
+        </footer>*/}
       </div>
     </>
   );
