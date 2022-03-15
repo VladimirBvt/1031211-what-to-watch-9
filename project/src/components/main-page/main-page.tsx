@@ -1,8 +1,14 @@
 import Header from '../header/header';
 import SvgHidden from '../svg-hidden/svg-hidden';
 import Footer from '../footer/footer';
+import FilmCardList from '../filmCardList/filmCardList';
+import {Films} from '../../mocks/films';
 
-function MainPage(): JSX.Element {
+type MainPageProps = {
+  filmsData:Films
+}
+
+function MainPage(props:MainPageProps): JSX.Element {
   return (
     <>
       <SvgHidden set='forMainPage'/>
@@ -86,7 +92,10 @@ function MainPage(): JSX.Element {
           </ul>
 
           <div className='catalog__films-list'>
-            <article className='small-film-card catalog__films-card'>
+
+            <FilmCardList filmsData={props.filmsData} />
+
+            {/*<article className='small-film-card catalog__films-card'>
               <div className='small-film-card__image'>
                 <img src='img/fantastic-beasts-the-crimes-of-grindelwald.jpg' alt='Fantastic Beasts: The Crimes of Grindelwald' style={{width:'280', height:'175'}} />
               </div>
@@ -269,7 +278,7 @@ function MainPage(): JSX.Element {
               <h3 className='small-film-card__title'>
                 <a className='small-film-card__link' href='#'>Midnight Special</a>
               </h3>
-            </article>
+            </article>*/}
           </div>
 
           <div className='catalog__more'>
