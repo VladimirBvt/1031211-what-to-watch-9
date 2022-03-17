@@ -1,11 +1,22 @@
-function AddReview () {
+import SvgHidden from '../svg-hidden/svg-hidden';
+import UserBlock from '../user-block/user-block';
+import {Film} from '../../mocks/films';
+
+type AddReviewProps = {
+  filmData: Film
+}
+
+function AddReview (props:AddReviewProps) {
   return (
     <>
-      <div className='visually-hidden'>
-        {/* inject:svg */}
+
+      <SvgHidden set='' />
+
+      {/*<div className='visually-hidden'>
+         inject:svg
         <svg xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'>
           <symbol id='add' viewBox='0 0 19 20'>
-            {/* Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch */}
+             Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch
             <title>+</title>
             <desc>Created with Sketch.</desc>
             <g id='Page-1' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
@@ -22,7 +33,7 @@ function AddReview () {
             <path fillRule='evenodd' clipRule='evenodd' d='M2.40513 5.35353L6.1818 8.90902L15.5807 0L18 2.80485L6.18935 14L0 8.17346L2.40513 5.35353Z' fill='#EEE5B5'/>
           </symbol>
           <symbol id='pause' viewBox='0 0 14 21'>
-            {/* Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch */}
+             Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch
             <title>Artboard</title>
             <desc>Created with Sketch.</desc>
             <g id='Artboard' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
@@ -31,13 +42,13 @@ function AddReview () {
             </g>
           </symbol>
         </svg>
-        {/* endinject */}
-      </div>
+         endinject
+      </div>*/}
 
       <section className='film-card film-card--full'>
         <div className='film-card__header'>
           <div className='film-card__bg'>
-            <img src='img/bg-the-grand-budapest-hotel.jpg' alt='The Grand Budapest Hotel'/>
+            <img src={props.filmData.image} alt={props.filmData.title} />
           </div>
 
           <h1 className='visually-hidden'>WTW</h1>
@@ -62,7 +73,9 @@ function AddReview () {
               </ul>
             </nav>
 
-            <ul className='user-block'>
+            <UserBlock />
+
+            {/*<ul className='user-block'>
               <li className='user-block__item'>
                 <div className='user-block__avatar'>
                   <img src='img/avatar.jpg' alt='User avatar' style={{width:'63', height:'63'}} />
@@ -71,11 +84,11 @@ function AddReview () {
               <li className='user-block__item'>
                 <a className='user-block__link'>Sign out</a>
               </li>
-            </ul>
+            </ul>*/}
           </header>
 
           <div className='film-card__poster film-card__poster--small'>
-            <img src='img/the-grand-budapest-hotel-poster.jpg' alt='The Grand Budapest Hotel poster' style={{width:'218', height:'327'}} />
+            <img src={props.filmData.image} alt={`${props.filmData.title} poster`} style={{width:'218', height:'327'}} />
           </div>
         </div>
 

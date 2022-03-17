@@ -14,6 +14,7 @@ import AddReview from '../add-review/add-review';
 import Player from '../player/player';
 import NotFound from '../not-found/not-found';
 import {Films} from '../../mocks/films';
+import {films} from '../../mocks/films';
 
 /*type PromoFilmProp = {
   promoFilmsData: {
@@ -38,7 +39,7 @@ function App(props:AppProps): JSX.Element {
         <Routes>
           <Route
             path={AppRoute.Main}
-            element={<MainPage/>}
+            element={<MainPage filmsData={films}/>}
           />
           <Route
             path={AppRoute.SignIn}
@@ -48,7 +49,7 @@ function App(props:AppProps): JSX.Element {
             path={AppRoute.MyList}
             element={
               <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-                <MyList />
+                <MyList filmsData={films}/>
               </PrivateRoute>
             }
           />
@@ -58,11 +59,11 @@ function App(props:AppProps): JSX.Element {
           />
           <Route
             path={AppRoute.AddReview}
-            element={<AddReview/>}
+            element={<AddReview filmData={films[0]}/>}
           />
           <Route
             path={AppRoute.Player}
-            element={<Player/>}
+            element={<Player filmData={films[0]} />}
           />
           <Route
             path='*'

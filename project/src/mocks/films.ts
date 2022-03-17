@@ -1,4 +1,4 @@
-export type Films = {
+export type Film = {
   id: number,
   title: string,
   genre: string,
@@ -6,7 +6,10 @@ export type Films = {
   rating: number,
   image: string,
   video: string,
-}[];
+  time: string,
+}
+
+export type Films = Film[];
 
 export const films :Films = [
   {
@@ -17,6 +20,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/the-grand-budapest-hotel-poster.jpg',
     video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    time: '1:28:13',
   },
   {
     id: 1,
@@ -26,6 +30,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
     video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    time: '1:14:26',
   },
   {
     id: 2,
@@ -35,6 +40,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/bohemian-rhapsody.jpg',
     video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    time: '1:06:44',
   },
   {
     id: 3,
@@ -44,6 +50,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/macbeth.jpg',
     video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    time: '1:19:31',
   },
   {
     id: 4,
@@ -53,6 +60,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/aviator.jpg',
     video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    time: '1:26:55',
   },
   {
     id: 5,
@@ -62,6 +70,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/we-need-to-talk-about-kevin.jpg',
     video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    time: '1:11:15',
   },
   {
     id: 6,
@@ -71,6 +80,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/what-we-do-in-the-shadows.jpg',
     video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    time: '0:57:25',
   },
   {
     id: 7,
@@ -80,5 +90,6 @@ export const films :Films = [
     rating: 0,
     image: 'img/revenant.jpg',
     video: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    time: '1:11:17',
   },
 ];

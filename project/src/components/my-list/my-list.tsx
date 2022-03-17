@@ -1,8 +1,14 @@
 import Header from '../header/header';
 import SvgHidden from '../svg-hidden/svg-hidden';
 import Footer from '../footer/footer';
+import {Films} from '../../mocks/films';
+import FilmCardList from '../filmCardList/filmCardList';
 
-function MyList ():JSX.Element {
+type MyListProps = {
+  filmsData: Films
+}
+
+function MyList (props: MyListProps):JSX.Element {
   return (
     <>
       <SvgHidden set='forMyList'/>
@@ -15,7 +21,10 @@ function MyList ():JSX.Element {
           <h2 className='catalog__title visually-hidden'>Catalog</h2>
 
           <div className='catalog__films-list'>
-            <article className='small-film-card catalog__films-card'>
+
+            <FilmCardList filmsData={props.filmsData} />
+
+            {/*<article className='small-film-card catalog__films-card'>
               <div className='small-film-card__image'>
                 <img src='img/fantastic-beasts-the-crimes-of-grindelwald.jpg' alt='Fantastic Beasts: The Crimes of Grindelwald' style={{width:'280', height:'175'}}/>
               </div>
@@ -96,7 +105,7 @@ function MyList ():JSX.Element {
               <h3 className='small-film-card__title'>
                 <a className='small-film-card__link' href='#'>Shutter Island</a>
               </h3>
-            </article>
+            </article>*/}
           </div>
         </section>
 
