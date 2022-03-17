@@ -13,7 +13,7 @@ function FilmCardList (props:FilmCardListProps):JSX.Element {
   const films = props.filmsData;
   return (
     <>
-      {films.map((item) => <FilmCard key={item.id} filmData={item}/>)}
+      {films.map((item) => <FilmCard key={item.id} filmData={item} />)}
     </>
 
   );
