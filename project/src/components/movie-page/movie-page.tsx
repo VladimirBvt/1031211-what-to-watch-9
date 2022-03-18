@@ -108,59 +108,11 @@ function MoviePage (props:PropsMoviePages) {
 
             <FilmCardList filmsData={props.filmsData}/>
 
-            {/*<article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/fantastic-beasts-the-crimes-of-grindelwald.jpg' alt='Fantastic Beasts: The Crimes of Grindelwald' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>{props.filmsData[0].title}Fantastic Beasts: The Crimes of Grindelwald</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/bohemian-rhapsody.jpg' alt='Bohemian Rhapsody' style={{width:'280', height:'175'}}/>
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Bohemian Rhapsody</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/macbeth.jpg' alt='Macbeth' style={{width:'280', height:'175'}}/>
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Macbeth</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/aviator.jpg' alt='Aviator' style={{width:'280', height:'175'}}/>
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Aviator</a>
-              </h3>
-            </article>*/}
           </div>
         </section>
 
         <Footer />
 
-        {/*<footer className='page-footer'>
-          <div className='logo'>
-            <a href='#' className='logo__link logo__link--light'>
-              <span className='logo__letter logo__letter--1'>W</span>
-              <span className='logo__letter logo__letter--2'>T</span>
-              <span className='logo__letter logo__letter--3'>W</span>
-            </a>
-          </div>
-
-          <div className='copyright'>
-            <p>© 2019 What to watch Ltd.</p>
-          </div>
-        </footer>*/}
       </div>
     </>
   );
