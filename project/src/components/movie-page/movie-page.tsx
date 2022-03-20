@@ -4,7 +4,7 @@ import FilmCardList from '../filmCardList/filmCardList';
 import Footer from '../footer/footer';
 import UserBlock from '../user-block/user-block';
 import Logo from '../logo/logo';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
 type PropsMoviePages = {
   filmsData:Films
@@ -23,7 +23,7 @@ function MoviePage (props:PropsMoviePages) {
       <section className='film-card film-card--full'>
         <div className='film-card__hero'>
           <div className='film-card__bg'>
-            <img src='img/bg-the-grand-budapest-hotel.jpg' alt='The Grand Budapest Hotel'/>
+            <img src={film?.image} alt={film?.title}/>
           </div>
 
           <h1 className='visually-hidden'>WTW</h1>
@@ -57,7 +57,7 @@ function MoviePage (props:PropsMoviePages) {
                   </svg>
                   <span>My list</span>
                 </button>
-                <a href='#' className='btn film-card__button'>Add review</a>
+                <Link to={`/films/:${id}/review`} className='btn film-card__button'>Add review</Link>
               </div>
             </div>
           </div>

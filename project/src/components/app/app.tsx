@@ -54,8 +54,8 @@ function App(props:AppProps): JSX.Element {
           <Route
             path={AppRoute.AddReview}
             element={
-              <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-                <AddReview filmData={films[0]}/>
+              <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+                <AddReview />
               </PrivateRoute>
             }
           />

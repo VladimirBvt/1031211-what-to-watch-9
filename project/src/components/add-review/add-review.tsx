@@ -1,16 +1,19 @@
 import SvgHidden from '../svg-hidden/svg-hidden';
 import UserBlock from '../user-block/user-block';
-import {Film} from '../../mocks/films';
+import {films} from '../../mocks/films';
 import Logo from '../logo/logo';
 //import {useState} from 'react';
+import {useParams} from 'react-router-dom';
 
-type AddReviewProps = {
-  filmData: Film
-}
 
-function AddReview (props:AddReviewProps) {
+function AddReview () {
   //const [rating, setRating] = useState('')
   //const [review, setReview] = useState('')
+
+  const params = useParams();
+  const id = params.id?.slice(1);
+
+  const film = (films.find((item) => String(item.id) === id ));
 
   return (
     <>
@@ -20,7 +23,7 @@ function AddReview (props:AddReviewProps) {
       <section className='film-card film-card--full'>
         <div className='film-card__header'>
           <div className='film-card__bg'>
-            <img src={props.filmData.image} alt={props.filmData.title} />
+            <img src={film?.image} alt={film?.title} />
           </div>
 
           <h1 className='visually-hidden'>WTW</h1>
@@ -32,7 +35,7 @@ function AddReview (props:AddReviewProps) {
             <nav className='breadcrumbs'>
               <ul className='breadcrumbs__list'>
                 <li className='breadcrumbs__item'>
-                  <a href='#' className='breadcrumbs__link'>The Grand Budapest Hotel</a>
+                  <a href='#' className='breadcrumbs__link'>{film?.title}</a>
                 </li>
                 <li className='breadcrumbs__item'>
                   <a className='breadcrumbs__link'>Add review</a>
@@ -45,7 +48,7 @@ function AddReview (props:AddReviewProps) {
           </header>
 
           <div className='film-card__poster film-card__poster--small'>
-            <img src={props.filmData.image} alt={`${props.filmData.title} poster`} style={{width:'218', height:'327'}} />
+            <img src={film?.image} alt={`${film?.title} poster`} style={{width:'218', height:'327'}} />
           </div>
         </div>
 
