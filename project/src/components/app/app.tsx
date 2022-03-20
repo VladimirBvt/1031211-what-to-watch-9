@@ -1,9 +1,4 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-//import FilmCard from '../film-card/film-card';
-//import {PromoFilm} from '../../index';
-//import SvgHidden from '../svg-hidden/svg-hidden';
-//import Header from '../header/header';
-//import Footer from '../footer/footer';
 import {AppRoute, AuthorizationStatus} from '../../const';
 import MainPage from '../main-page/main-page';
 import SignIn from '../sign-in/sign-in';

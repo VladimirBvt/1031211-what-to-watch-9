@@ -1,15 +1,21 @@
-import {Films} from '../../mocks/films';
+import {films, Films} from '../../mocks/films';
 import SvgHidden from '../svg-hidden/svg-hidden';
 import FilmCardList from '../filmCardList/filmCardList';
 import Footer from '../footer/footer';
 import UserBlock from '../user-block/user-block';
 import Logo from '../logo/logo';
+import {useParams} from 'react-router-dom';
 
 type PropsMoviePages = {
   filmsData:Films
 };
 
 function MoviePage (props:PropsMoviePages) {
+  const params = useParams();
+  const id = params.id?.slice(1);
+
+  const film = (films.find((item) => String(item.id) === id ));
+
   return (
     <>
       <SvgHidden set='forMainPage' />
@@ -32,10 +38,10 @@ function MoviePage (props:PropsMoviePages) {
 
           <div className='film-card__wrap'>
             <div className='film-card__desc'>
-              <h2 className='film-card__title'>The Grand Budapest Hotel</h2>
+              <h2 className='film-card__title'> {film?.title} </h2>
               <p className='film-card__meta'>
-                <span className='film-card__genre'>Drama</span>
-                <span className='film-card__year'>2014</span>
+                <span className='film-card__genre'>{film?.genre}</span>
+                <span className='film-card__year'>{film?.dateRelease}</span>
               </p>
 
               <div className='film-card__buttons'>
@@ -60,7 +66,7 @@ function MoviePage (props:PropsMoviePages) {
         <div className='film-card__wrap film-card__translate-top'>
           <div className='film-card__info'>
             <div className='film-card__poster film-card__poster--big'>
-              <img src='img/the-grand-budapest-hotel-poster.jpg' alt='The Grand Budapest Hotel poster' style={{width:'218', height:'327'}} />
+              <img src={film?.image} alt={film?.title} style={{width:'218', height:'327'}} />
             </div>
 
             <div className='film-card__desc'>
@@ -79,10 +85,10 @@ function MoviePage (props:PropsMoviePages) {
               </nav>
 
               <div className='film-rating'>
-                <div className='film-rating__score'>8,9</div>
+                <div className='film-rating__score'>{film?.numberOfRatings}</div>
                 <p className='film-rating__meta'>
                   <span className='film-rating__level'>Very good</span>
-                  <span className='film-rating__count'>240 ratings</span>
+                  <span className='film-rating__count'>{film?.rating} ratings</span>
                 </p>
               </div>
 
@@ -91,9 +97,9 @@ function MoviePage (props:PropsMoviePages) {
 
                 <p>Gustave prides himself on providing first-class service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.</p>
 
-                <p className='film-card__director'><strong>Director: Wes Anderson</strong></p>
+                <p className='film-card__director'><strong>Director: {film?.director}</strong></p>
 
-                <p className='film-card__starring'><strong>Starring: Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other</strong></p>
+                <p className='film-card__starring'><strong>Starring: {film?.starring}</strong></p>
               </div>
             </div>
           </div>

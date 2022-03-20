@@ -2,12 +2,16 @@ import SvgHidden from '../svg-hidden/svg-hidden';
 import UserBlock from '../user-block/user-block';
 import {Film} from '../../mocks/films';
 import Logo from '../logo/logo';
+//import {useState} from 'react';
 
 type AddReviewProps = {
   filmData: Film
 }
 
 function AddReview (props:AddReviewProps) {
+  //const [rating, setRating] = useState('')
+  //const [review, setReview] = useState('')
+
   return (
     <>
 
