@@ -7,8 +7,8 @@ import {useParams} from 'react-router-dom';
 
 
 function AddReview () {
-  //const [rating, setRating] = useState('')
-  //const [review, setReview] = useState('')
+  //const [rating, setRating] = useState('');
+  //const [review, setReview] = useState('');
 
   const params = useParams();
   const id = params.id?.slice(1);
@@ -53,7 +53,8 @@ function AddReview () {
         </div>
 
         <div className='add-review'>
-          <form action='#' className='add-review__form'>
+          <form action='#' className='add-review__form' onSubmit={(evt) => { evt.preventDefault(); }}>
+
             <div className='rating'>
               <div className='rating__stars'>
                 <input className='rating__input' id='star-10' type='radio' name='rating' value='10'/>
@@ -89,7 +90,7 @@ function AddReview () {
             </div>
 
             <div className='add-review__text'>
-              <textarea className='add-review__textarea' name='review-text' id='review-text' placeholder='Review text'/>
+              <textarea className='add-review__textarea' name='review-text' id='review-text' placeholder='Review text' /*onChange={(evt)=>{ setReview(evt.target.value); }}*/ />
               <div className='add-review__submit'>
                 <button className='add-review__btn' type='submit'>Post</button>
               </div>
