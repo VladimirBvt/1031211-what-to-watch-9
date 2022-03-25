@@ -2,13 +2,15 @@ import SvgHidden from '../svg-hidden/svg-hidden';
 import UserBlock from '../user-block/user-block';
 import {films} from '../../mocks/films';
 import Logo from '../logo/logo';
-//import {useState} from 'react';
+import React, {useState} from 'react';
 import {useParams} from 'react-router-dom';
 
 
-function AddReview () {
+function AddReview ():JSX.Element {
   //const [rating, setRating] = useState('');
   //const [review, setReview] = useState('');
+  const setRating = useState('')[1];
+  const setReview = useState('')[1];
 
   const params = useParams();
   const id = params.id?.slice(1);
@@ -53,7 +55,20 @@ function AddReview () {
         </div>
 
         <div className='add-review'>
-          <form action='#' className='add-review__form' onSubmit={(evt) => { evt.preventDefault(); }}>
+          <form action='#' className='add-review__form' onSubmit={(evt) => {
+            evt.preventDefault();
+            const form:HTMLFormElement | null = document.querySelector('.add-review__form');
+            //const form:HTMLFormElement | null = (evt.target as HTMLFormElement).querySelector('.add-review__form');
+            const valueInput:string = (form?.querySelector('.rating__input:checked')as HTMLInputElement)?.value;
+            const valueTextArea:string = (form?.querySelector('.add-review__textarea')as HTMLTextAreaElement)?.value;
+            setReview(valueTextArea);
+            setRating(valueInput);
+            //console.log(valueInput);
+            //console.log(valueTextArea);
+            //console.log(rating);
+            //console.log(review);
+          }}
+          >
 
             <div className='rating'>
               <div className='rating__stars'>
@@ -63,7 +78,7 @@ function AddReview () {
                 <input className='rating__input' id='star-9' type='radio' name='rating' value='9'/>
                 <label className='rating__label' htmlFor='star-9'>Rating 9</label>
 
-                <input className='rating__input' id='star-8' type='radio' name='rating' value='8' checked/>
+                <input className='rating__input' id='star-8' type='radio' name='rating' value='8'/>
                 <label className='rating__label' htmlFor='star-8'>Rating 8</label>
 
                 <input className='rating__input' id='star-7' type='radio' name='rating' value='7'/>
@@ -90,7 +105,7 @@ function AddReview () {
             </div>
 
             <div className='add-review__text'>
-              <textarea className='add-review__textarea' name='review-text' id='review-text' placeholder='Review text' /*onChange={(evt)=>{ setReview(evt.target.value); }}*/ />
+              <textarea className='add-review__textarea' name='review-text' id='review-text' placeholder='Review text' />
               <div className='add-review__submit'>
                 <button className='add-review__btn' type='submit'>Post</button>
               </div>
