@@ -65,8 +65,6 @@ function AddReview ():JSX.Element {
             setRating(valueInput);
             //console.log(valueInput);
             //console.log(valueTextArea);
-            //console.log(rating);
-            //console.log(review);
           }}
           >
 
