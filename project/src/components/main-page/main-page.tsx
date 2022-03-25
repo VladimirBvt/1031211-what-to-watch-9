@@ -1,8 +1,14 @@
 import Header from '../header/header';
 import SvgHidden from '../svg-hidden/svg-hidden';
 import Footer from '../footer/footer';
+import FilmCardList from '../filmCardList/filmCardList';
+import {Films} from '../../mocks/films';
 
-function MainPage(): JSX.Element {
+type MainPageProps = {
+  filmsData:Films
+}
+
+function MainPage(props:MainPageProps): JSX.Element {
   return (
     <>
       <SvgHidden set='forMainPage'/>
@@ -86,190 +92,9 @@ function MainPage(): JSX.Element {
           </ul>
 
           <div className='catalog__films-list'>
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/fantastic-beasts-the-crimes-of-grindelwald.jpg' alt='Fantastic Beasts: The Crimes of Grindelwald' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Fantastic Beasts: The Crimes of Grindelwald</a>
-              </h3>
-            </article>
 
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/bohemian-rhapsody.jpg' alt='Bohemian Rhapsody' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Bohemian Rhapsody</a>
-              </h3>
-            </article>
+            <FilmCardList filmsData={props.filmsData} />
 
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/macbeth.jpg' alt='Macbeth' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Macbeth</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/aviator.jpg' alt='Aviator' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Aviator</a>
-              </h3>
-            </article>
-
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/we-need-to-talk-about-kevin.jpg' alt='We need to talk about Kevin' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>We need to talk about Kevin</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/what-we-do-in-the-shadows.jpg' alt='What We Do in the Shadows' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>What We Do in the Shadows</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/revenant.jpg' alt='Revenant' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Revenant</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/johnny-english.jpg' alt='Johnny English' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Johnny English</a>
-              </h3>
-            </article>
-
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/shutter-island.jpg' alt='Shutter Island' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Shutter Island</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/pulp-fiction.jpg' alt='Pulp Fiction' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Pulp Fiction</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/no-country-for-old-men.jpg' alt='No Country for Old Men' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>No Country for Old Men</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/snatch.jpg' alt='Snatch' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Snatch</a>
-              </h3>
-            </article>
-
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/moonrise-kingdom.jpg' alt='Moonrise Kingdom' style={{width:'280', height:'175'}} />
-
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Moonrise Kingdom</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/seven-years-in-tibet.jpg' alt='Seven Years in Tibet' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Seven Years in Tibet</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/midnight-special.jpg' alt='Midnight Special' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Midnight Special</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/war-of-the-worlds.jpg' alt='War of the Worlds' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>War of the Worlds</a>
-              </h3>
-            </article>
-
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/dardjeeling-limited.jpg' alt='Dardjeeling Limited' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Dardjeeling Limited</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/orlando.jpg' alt='Orlando' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Orlando</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/mindhunter.jpg' alt='Mindhunter' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Mindhunter</a>
-              </h3>
-            </article>
-
-            <article className='small-film-card catalog__films-card'>
-              <div className='small-film-card__image'>
-                <img src='img/midnight-special.jpg' alt='Midnight Special' style={{width:'280', height:'175'}} />
-              </div>
-              <h3 className='small-film-card__title'>
-                <a className='small-film-card__link' href='#'>Midnight Special</a>
-              </h3>
-            </article>
           </div>
 
           <div className='catalog__more'>

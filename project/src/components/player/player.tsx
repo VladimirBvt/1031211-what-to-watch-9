@@ -1,11 +1,21 @@
-function Player () {
+import SvgHidden from '../svg-hidden/svg-hidden';
+import {Film} from '../../mocks/films';
+
+type PlayerProps = {
+  filmData: Film
+}
+
+function Player (props: PlayerProps) {
   return (
     <>
-      <div className='visually-hidden'>
-        {/* inject:svg */}
+
+      <SvgHidden set='' />
+
+      {/*<div className='visually-hidden'>
+         inject:svg
         <svg xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'>
           <symbol id='add' viewBox='0 0 19 20'>
-            {/* Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch */}
+             Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch
             <title>+</title>
             <desc>Created with Sketch.</desc>
             <g id='Page-1' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
@@ -22,7 +32,7 @@ function Player () {
             <path fillRule='evenodd' clipRule='evenodd' d='M2.40513 5.35353L6.1818 8.90902L15.5807 0L18 2.80485L6.18935 14L0 8.17346L2.40513 5.35353Z' fill='#EEE5B5'/>
           </symbol>
           <symbol id='pause' viewBox='0 0 14 21'>
-            {/* Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch */}
+             Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch
             <title>Artboard</title>
             <desc>Created with Sketch.</desc>
             <g id='Artboard' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
@@ -31,11 +41,11 @@ function Player () {
             </g>
           </symbol>
         </svg>
-        {/* endinject */}
-      </div>
+         endinject
+      </div>*/}
 
       <div className='player'>
-        <video src='#' className='player__video' poster='img/player-poster.jpg'/>
+        <video src={props.filmData.video} className='player__video' poster={props.filmData.image}/>
 
         <button type='button' className='player__exit'>Exit</button>
 
