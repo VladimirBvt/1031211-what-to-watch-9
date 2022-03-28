@@ -42,7 +42,7 @@ function App(props:AppProps): JSX.Element {
           <Route
             path={AppRoute.MyList}
             element={
-              <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+              <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
                 <MyList filmsData={films}/>
               </PrivateRoute>
             }

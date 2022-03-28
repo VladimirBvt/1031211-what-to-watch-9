@@ -6,7 +6,6 @@ export type FilmCardProps = {
 }
 
 function FilmCard(props:FilmCardProps): JSX.Element {
-  //console.log(props.filmData.id);
 
   return (
     <article className='small-film-card catalog__films-card'>
