@@ -93,7 +93,8 @@ function VideoPlayer (props:videoPlayerProps) {
           return;
         }
 
-        vidRef.current.play();
+        setTimeout(() => {vidRef.current?.play();}, 1000);
+        //vidRef.current.play();
       }}
       onMouseDown={() => {
         if (!vidRef.current) {
