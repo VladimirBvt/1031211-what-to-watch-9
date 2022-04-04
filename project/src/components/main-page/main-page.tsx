@@ -3,6 +3,8 @@ import SvgHidden from '../svg-hidden/svg-hidden';
 import Footer from '../footer/footer';
 import FilmCardList from '../filmCardList/filmCardList';
 import {Films} from '../../mocks/films';
+import {Link} from 'react-router-dom';
+import {AppRoute} from '../../const';
 
 type MainPageProps = {
   filmsData:Films
@@ -36,18 +38,18 @@ function MainPage(props:MainPageProps): JSX.Element {
               </p>
 
               <div className='film-card__buttons'>
-                <button className='btn btn--play film-card__button' type='button'>
+                <Link to={'/player/:id'} className='btn btn--play film-card__button' type='button'>
                   <svg viewBox='0 0 19 19' style={{width:'19', height:'19'}}>
                     <use xlinkHref='#play-s'/>
                   </svg>
                   <span>Play</span>
-                </button>
-                <button className='btn btn--list film-card__button' type='button'>
+                </Link>
+                <Link to={AppRoute.MyList} className='btn btn--list film-card__button' type='button'>
                   <svg viewBox='0 0 19 20' style={{width:'19', height:'20'}}>
                     <use xlinkHref='#add'/>
                   </svg>
                   <span>My list</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
