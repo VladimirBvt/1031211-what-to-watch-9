@@ -24,7 +24,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/the-grand-budapest-hotel-poster.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '1:28:13',
+    time: '1h 28m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
@@ -40,7 +40,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '1:14:26',
+    time: '1h 14m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
@@ -56,7 +56,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/bohemian-rhapsody.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '1:06:44',
+    time: '1h 06m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
@@ -72,7 +72,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/macbeth.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '1:19:31',
+    time: '1h 19m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
@@ -88,7 +88,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/aviator.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '1:26:55',
+    time: '1h 26m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
@@ -104,7 +104,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/we-need-to-talk-about-kevin.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '1:11:15',
+    time: '1h 11m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
@@ -120,7 +120,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/what-we-do-in-the-shadows.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '0:57:25',
+    time: '1h 09m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
@@ -136,7 +136,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/revenant.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '1:11:17',
+    time: '1h 11m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
@@ -152,7 +152,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/revenant.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '1:11:17',
+    time: '1h 39m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
@@ -168,7 +168,7 @@ export const films :Films = [
     rating: 0,
     image: 'img/revenant.jpg',
     video: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    time: '1:11:17',
+    time: '1h 39m',
     numberOfRatings: 0,
     description: 'In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave\'s friend and protege.\n' +
       '\n' +
