@@ -847,6 +847,10 @@ main {
   .film-nav__item:last-child {
     margin-right: 0; }
 
+span:hover {
+  cursor: pointer;
+}
+
 .film-nav__link {
   display: block;
   color: #EEE5B5;

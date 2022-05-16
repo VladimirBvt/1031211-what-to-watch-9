@@ -1,6 +1,7 @@
 //import {Film} from '../../mocks/films';
 //import {useEffect, useRef, useState} from 'react';
 import {useRef, useEffect} from 'react';
+//import Timeout = NodeJS.Timeout;
 
 type videoPlayerProps = {
   src: string,
@@ -76,14 +77,34 @@ function VideoPlayer (props:videoPlayerProps) {
     </div>
   );*/
 
-  const vidRef = useRef<HTMLVideoElement | null>(null);
+  /*type MutableRefObject = {
+    current: ReturnType<typeof setTimeout>
+  }*/
+
+  //type Type = typeof Timeout;
+  type Type = any;
+
+  const mutableRefObject: React.MutableRefObject<Type | null> = useRef<Type | null>(null);
+
+  const vidRef = useRef <HTMLVideoElement | null>(null);
+
+  /*const playTimeout = () => {
+    const id = setTimeout(() => {vidRef.current?.play();}, 1000);
+    mutableRefObject.current = id;
+  };*/
+
+  /*useEffect(() => {
+    if (isOut) {
+      clearTimeout(mutableRefObject.current);
+    }
+  }, [isOut]);*/
 
   useEffect(() => {
+
     if (!vidRef.current) {
       //return;
     }
 
-    //console.log('vidRef', vidRef.current);
   }, [vidRef]);
 
   return (
@@ -93,21 +114,16 @@ function VideoPlayer (props:videoPlayerProps) {
           return;
         }
 
-        setTimeout(() => {vidRef.current?.play();}, 1000);
-        //vidRef.current.play();
-      }}
-      onMouseDown={() => {
-        if (!vidRef.current) {
-          return;
-        }
-
-        vidRef.current.pause();
+        let id: ReturnType<typeof setTimeout>;
+        id = setTimeout(() => {vidRef.current?.play();}, 1000);
+        mutableRefObject.current = id;
+        //playTimeout();
       }}
       onMouseOut={() => {
         if (!vidRef.current) {
           return;
         }
-
+        clearTimeout(mutableRefObject.current);
         vidRef.current.pause();
         vidRef.current?.load();
       }}

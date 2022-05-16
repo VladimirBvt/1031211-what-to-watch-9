@@ -5,7 +5,10 @@ import Footer from '../footer/footer';
 import UserBlock from '../user-block/user-block';
 import Logo from '../logo/logo';
 import {Link, useParams} from 'react-router-dom';
-import {AppRoute} from '../../const';
+import {ActiveTabMoviePage, AppRoute} from '../../const';
+import {SyntheticEvent, useRef, useState} from 'react';
+import Tabs from '../tabs/tabs';
+import {useEffect} from 'react';
 
 type PropsMoviePages = {
   filmsData:Films
@@ -16,6 +19,57 @@ function MoviePage (props:PropsMoviePages) {
   const id = params.id?.slice(1);
 
   const film = (films.find((item) => String(item.id) === id ));
+
+  const [activeTab, setActiveTab] = useState(ActiveTabMoviePage.Overview);
+  /* const tabs1 = document.querySelectorAll('.film-nav__item');
+  tabs1.forEach((item) => {
+    ((item.childNodes[0]) as HTMLSpanElement).classList.add('film-nav__link--cursor');
+    //item.style.cursor = 'pointer';
+    //console.log(item.childNodes[0]);
+  });*/
+
+  const tabTarget = useRef <HTMLLIElement|null> (null);
+
+  useEffect(() => {
+    const tabs = document.querySelectorAll('.film-nav__item');
+
+    tabs.forEach((item) => {
+      if (item.classList.contains('film-nav__item--active')) {
+        item.classList.remove('film-nav__item--active');
+      }
+      switch (activeTab) {
+        case 'overview': tabs[0].classList.add('film-nav__item--active');
+          break;
+        case 'details': tabs[1].classList.add('film-nav__item--active');
+          break;
+        case 'reviews': tabs[2].classList.add('film-nav__item--active');
+          break;
+      }
+    });
+
+    //console.log(tabs);
+    //((tabTarget.current) as HTMLLIElement).classList.add('film-nav__link');
+    //const tab = ((evt.target) as HTMLSpanElement).parentElement;
+    //tab?.classList.toggle('film-nav__item--active');
+    //const tab = tabTarget;
+    //((tab.current) as HTMLLIElement).classList.add('film-nav__item--active');
+    //console.log(((tab.current) as HTMLLIElement).classList.value);
+    //console.log(tab.current);
+  }, [activeTab]);
+
+  const handlerOverviewClick = () => {
+    setActiveTab(ActiveTabMoviePage.Overview);
+  };
+  const handlerDetailsClick = (evt:SyntheticEvent) => {
+    //const tab = ((evt.target) as HTMLSpanElement).parentElement;
+    setActiveTab(ActiveTabMoviePage.Details);
+    //tab?.classList.toggle('film-nav__item--active');
+  };
+  const handlerReviewsClick = () => {
+    setActiveTab(ActiveTabMoviePage.Reviews);
+  };
+
+  //console.log(tabTarget);
 
   return (
     <>
@@ -73,19 +127,21 @@ function MoviePage (props:PropsMoviePages) {
             <div className='film-card__desc'>
               <nav className='film-nav film-card__nav'>
                 <ul className='film-nav__list'>
-                  <li className='film-nav__item film-nav__item--active'>
-                    <a href='#' className='film-nav__link'>Overview</a>
+                  <li ref={tabTarget} className='film-nav__item' onClick={handlerOverviewClick}>
+                    <span className='film-nav__link'>Overview</span>
                   </li>
-                  <li className='film-nav__item'>
-                    <a href='#' className='film-nav__link'>Details</a>
+                  <li ref={tabTarget} className='film-nav__item' onClick={handlerDetailsClick}>
+                    <span className='film-nav__link'>Details</span>
                   </li>
-                  <li className='film-nav__item'>
-                    <a href='#' className='film-nav__link'>Reviews</a>
+                  <li ref={tabTarget} className='film-nav__item' onClick={handlerReviewsClick}>
+                    <span className='film-nav__link'>Reviews</span>
                   </li>
                 </ul>
               </nav>
 
-              <div className='film-rating'>
+              <Tabs setting={activeTab} film={film} />
+
+              {/*<div className='film-rating'>
                 <div className='film-rating__score'>{film?.numberOfRatings}</div>
                 <p className='film-rating__meta'>
                   <span className='film-rating__level'>Very good</span>
@@ -101,7 +157,7 @@ function MoviePage (props:PropsMoviePages) {
                 <p className='film-card__director'><strong>Director: {film?.director}</strong></p>
 
                 <p className='film-card__starring'><strong>Starring: {film?.starring}</strong></p>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>
